@@ -1,20 +1,22 @@
-name: Build and Deploy
 on: [push]
-permissions:
-  contents: write
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: Deploy to Cloudflare Pages
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install and Build
-        run: |
-          npm ci
-          npm run build
+      - name: Build
+        run: npm ci && npm run build
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: cloudflare/wrangler-action@v3
         with:
-          folder: dist
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=vrweb
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
