@@ -1,0 +1,98 @@
+@import './base.css';
+
+#app {
+  margin: 0 auto;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+.custom-hotspot {
+  background-image: none;
+}
+
+.center-button {
+  animation: scaleDrew 2.5s ease-in-out infinite;
+}
+
+@keyframes scaleDrew {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1.2);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  75% {
+    transform: scale(1.2);
+  }
+}
+
+@font-face {
+  font-family: "Title";
+  src: url("/title.woff2") format("woff2")
+}
+
+@font-face {
+  font-family: "Content";
+  src: url("/content.woff2") format("woff2")
+}
+
+.huge {
+  width: 25vw !important;
+  cursor: pointer;
+}
+
+.animated-image {
+  transform-origin: center center;
+  transition: opacity 0.2s ease;
+  opacity: 0;
+  position: absolute;
+  bottom: 25vh;
+  left: 40vw;
+}
+
+.animated-image.active {
+  opacity: 1;
+  animation: scaleAndMove 6s ease-in-out forwards;
+}
+
+@keyframes scaleAndMove {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(2) translateY(0);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(0.8) translateY(30vh) translateX(-5vw);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8) translateY(30vh) translateX(-5vw);
+    opacity: 0;
+  }
+}
+
+.display {
+  display: block !important;
+}

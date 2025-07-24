@@ -1,0 +1,39 @@
+{
+  "name": "vr_web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview --host",
+    "lint": "eslint . --fix",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "@egjs/view360": "^4.0.0-beta.7",
+    "@videojs-player/vue": "^1.0.0",
+    "pannellum": "^2.5.6",
+    "pinia": "^3.0.3",
+    "v-viewer": "^3.0.11",
+    "video.js": "^7.21.7",
+    "viewerjs": "^1.11.7",
+    "vite-plugin-vuetify": "^2.1.1",
+    "vue": "^3.5.17",
+    "vue-pannellum": "^0.5.3",
+    "vue-router": "^4.5.1",
+    "vuetify": "^3.9.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "@mdi/font": "^7.4.47",
+    "@mdi/js": "^7.4.47",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "eslint": "^9.29.0",
+    "eslint-plugin-vue": "~10.2.0",
+    "globals": "^16.2.0",
+    "prettier": "3.5.3",
+    "vite": "^7.0.0"
+  }
+}
